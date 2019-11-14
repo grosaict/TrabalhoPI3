@@ -7,8 +7,12 @@ namespace Margille.Models
 {
     public class Ingredient
     {
-        public int IdIngredient { get; set; }
+        public int IngredientId { get; set; }
         public string IngredientName { get; set; }
         public Boolean IndAvailable { get; set; }
+
+        // O atributo abaixo serve para realizar o vículo n para n
+        public List<PizzaIngredient> PizzaIngredient { get; set; }
+
     }
 }

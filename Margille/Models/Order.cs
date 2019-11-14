@@ -7,10 +7,14 @@ namespace Margille.Models
 {
     public class Order
     {
-        public int IdOrder{ get; set; }
-        public int IdClient { get; set; }
+        public int OrderId { get; set; }
+
+        public int ClientId { get; set; }
+        public Client Client { get; set; }
+
         public DateTime OrderData { get; set; }
-        public ProductOrder[] ProductsOrder { get; set; }
-        public PizzaOrder[] PizzasOrder { get; set; }
+
+        // O atributo abaixo serve para realizar o vículo n para n
+        public List<ProductOrder> ProductOrder { get; set; }
     }
 }

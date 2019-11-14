@@ -8,6 +8,8 @@ namespace Margille.Models
     public class Pizza : Product
     {
         public string PizzaDescription{ get; set; }
-        public Ingredient[] Ingredients { get; set; }
+
+        // O atributo abaixo serve para realizar o vículo n para n
+        public List<PizzaIngredient> PizzaIngredient { get; set; }
     }
 }

@@ -7,8 +7,12 @@ namespace Margille.Models
 {
     public class Product
     {
-        public int IdProduct{ get; set; }
+        public int ProductId { get; set; }
         public string ProductName { get; set; }
         public double ProductPrice { get; set; }
+
+        // O atributo abaixo serve para realizar o vículo n para n
+        public List<ProductOrder> ProductOrder { get; set; }
+
     }
 }

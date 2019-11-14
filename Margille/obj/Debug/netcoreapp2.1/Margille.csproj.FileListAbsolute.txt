@@ -30,3 +30,8 @@ C:\Users\gsenn\Desktop\workspace\PI3-Trabalho\Margille\Margille\obj\Debug\netcor
 C:\Users\gsenn\Desktop\workspace\PI3-Trabalho\Margille\Margille\obj\Debug\netcoreapp2.1\Margille.dll
 C:\Users\gsenn\Desktop\workspace\PI3-Trabalho\Margille\Margille\obj\Debug\netcoreapp2.1\Margille.pdb
 C:\Users\gsenn\Desktop\workspace\PI3-Trabalho\Margille\Margille\obj\Debug\netcoreapp2.1\Margille.csproj.CopyComplete
+C:\Users\gsenn\Desktop\workspace\PI3-Trabalho\Margille\Margille\obj\Debug\netcoreapp2.1\Razor\Views\Clients\Create.g.cshtml.cs
+C:\Users\gsenn\Desktop\workspace\PI3-Trabalho\Margille\Margille\obj\Debug\netcoreapp2.1\Razor\Views\Clients\Delete.g.cshtml.cs
+C:\Users\gsenn\Desktop\workspace\PI3-Trabalho\Margille\Margille\obj\Debug\netcoreapp2.1\Razor\Views\Clients\Details.g.cshtml.cs
+C:\Users\gsenn\Desktop\workspace\PI3-Trabalho\Margille\Margille\obj\Debug\netcoreapp2.1\Razor\Views\Clients\Edit.g.cshtml.cs
+C:\Users\gsenn\Desktop\workspace\PI3-Trabalho\Margille\Margille\obj\Debug\netcoreapp2.1\Razor\Views\Clients\Index.g.cshtml.cs

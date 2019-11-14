@@ -7,7 +7,7 @@ namespace Margille.Models
 {
     public class Client
     {
-        public int IdClient { get; set; }
+        public int ClientId { get; set; }
         public string NameClient { get; set; }
         public string Email { get; set; }
         public int Mobile { get; set; }
