@@ -12,7 +12,7 @@ namespace Margille.Models
         public Boolean IndAvailable { get; set; }
 
         // O atributo abaixo serve para realizar o vículo n para n
-        public List<PizzaIngredient> PizzaIngredient { get; set; }
+        public List<PizzaIngredient> PizzaIngredients { get; set; }
 
     }
 }
