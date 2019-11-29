@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Margille.Migrations
 {
     [DbContext(typeof(MargilleContext))]
-    [Migration("20191121002516_Initial")]
-    partial class Initial
+    [Migration("20191129004836_01Mig")]
+    partial class _01Mig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -46,6 +46,8 @@ namespace Margille.Migrations
                         .IsRequired();
 
                     b.Property<string>("Pwd");
+
+                    b.Property<bool>("Staff");
 
                     b.HasKey("ClientId");
 

@@ -45,6 +45,8 @@ namespace Margille.Migrations
 
                     b.Property<string>("Pwd");
 
+                    b.Property<bool>("Staff");
+
                     b.HasKey("ClientId");
 
                     b.ToTable("Client");

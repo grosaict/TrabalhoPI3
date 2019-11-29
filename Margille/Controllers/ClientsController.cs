@@ -53,7 +53,7 @@ namespace Margille.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ClientId,NameClient,Email,Mobile,Pwd,AddressLine1,AddressLine2,AddressLine3,PostCode")] Client client)
+        public async Task<IActionResult> Create([Bind("ClientId,NameClient,Email,Mobile,Pwd,AddressLine1,AddressLine2,AddressLine3,PostCode,Staff")] Client client)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace Margille.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ClientId,NameClient,Email,Mobile,Pwd,AddressLine1,AddressLine2,AddressLine3,PostCode")] Client client)
+        public async Task<IActionResult> Edit(int id, [Bind("ClientId,NameClient,Email,Mobile,Pwd,AddressLine1,AddressLine2,AddressLine3,PostCode,Staff")] Client client)
         {
             if (id != client.ClientId)
             {

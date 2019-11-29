@@ -22,6 +22,7 @@ namespace Margille.Models
         public string AddressLine3 { get; set; }
         [Required]
         public string PostCode { get; set; }
+        public bool Staff { get; set; }
 
 
         public Client()
@@ -30,27 +31,27 @@ namespace Margille.Models
 
         public Client(int id, string name, string email, int mobile, string pwd, string add1, string add2, string add3, string postcode)
         {
-            ClientId        = id;
-            NameClient      = name;
-            Email           = email;
-            Mobile          = mobile;
-            Pwd             = pwd;
-            AddressLine1    = add1;
-            AddressLine2    = add2;
-            AddressLine3    = add3;
-            PostCode        = postcode;
+            ClientId = id;
+            NameClient = name;
+            Email = email;
+            Mobile = mobile;
+            Pwd = pwd;
+            AddressLine1 = add1;
+            AddressLine2 = add2;
+            AddressLine3 = add3;
+            PostCode = postcode;
         }
 
         public Client(string name, string email, int mobile, string pwd, string add1, string add2, string add3, string postcode)
         {
-            NameClient      = name;
-            Email           = email;
-            Mobile          = mobile;
-            Pwd             = pwd;
-            AddressLine1    = add1;
-            AddressLine2    = add2;
-            AddressLine3    = add3;
-            PostCode        = postcode;
+            NameClient = name;
+            Email = email;
+            Mobile = mobile;
+            Pwd = pwd;
+            AddressLine1 = add1;
+            AddressLine2 = add2;
+            AddressLine3 = add3;
+            PostCode = postcode;
         }
     }
 }

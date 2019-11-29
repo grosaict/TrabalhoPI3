@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-Margille-C527ECA4-413C-4D64-AC43-2B6E2EC6FD42</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>

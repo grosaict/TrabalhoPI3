@@ -12542,11 +12542,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gsenn\\Desktop\\workspace\\PI3-Trabalho\\Margille\\Margille\\Margille.csproj",
+      "projectUniqueName": "C:\\Users\\gsenn\\Desktop\\my files\\workspace\\PI3-Trabalho\\Margille\\Margille\\Margille.csproj",
       "projectName": "Margille",
-      "projectPath": "C:\\Users\\gsenn\\Desktop\\workspace\\PI3-Trabalho\\Margille\\Margille\\Margille.csproj",
+      "projectPath": "C:\\Users\\gsenn\\Desktop\\my files\\workspace\\PI3-Trabalho\\Margille\\Margille\\Margille.csproj",
       "packagesPath": "C:\\Users\\gsenn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gsenn\\Desktop\\workspace\\PI3-Trabalho\\Margille\\Margille\\obj\\",
+      "outputPath": "C:\\Users\\gsenn\\Desktop\\my files\\workspace\\PI3-Trabalho\\Margille\\Margille\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
