@@ -1,0 +1,30 @@
+﻿@model Margille.Models.Order
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Order</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Client)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Client.AddressLine1)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.OrderData)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.OrderData)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.OrderId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
