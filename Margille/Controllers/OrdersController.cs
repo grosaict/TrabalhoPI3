@@ -47,7 +47,7 @@ namespace Margille.Controllers
         // GET: Orders/Create
         public IActionResult Create()
         {
-            ViewData["ClientId"] = new SelectList(_context.Client, "ClientId", "AddressLine1");
+            ViewData["ClientId"] = new SelectList(_context.Client, "ClientId", "NameClient");
             return View();
         }
 

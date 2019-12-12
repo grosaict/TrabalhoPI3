@@ -34,11 +34,12 @@
                     @{
                         foreach (var item in Model.PizzaIngredients)
                         {
-                            <span>@Html.DisplayFor(model => item.Ingredient.IngredientName)</span>
+                            <p>@Html.DisplayFor(model => item.Ingredient.IngredientName)</p>
+                            <input type="hidden" asp-for="@item.Ingredient.IngredientId"/>
                         }
                     }
-                </p>
-            </div>
+                    </p>
+                </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
 </div>
