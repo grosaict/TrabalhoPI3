@@ -14,6 +14,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Margille.Models;
 using Margille.Services;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace Margille
 {
@@ -66,6 +68,20 @@ namespace Margille
                 app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
+
+            //Instância um objeto CultureInfo
+            var ptBR = new CultureInfo("pt-BR");
+            //Instância a opção de localização, com um conjunto de definições
+            var localizationOption = new RequestLocalizationOptions
+            {
+                //Definição da Cultura padrão
+                DefaultRequestCulture = new RequestCulture(ptBR),
+                SupportedCultures = new List<CultureInfo> { ptBR },
+                SupportedUICultures = new List<CultureInfo> { ptBR }
+            };
+
+            //Define o Locale padrão
+            app.UseRequestLocalization(localizationOption);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

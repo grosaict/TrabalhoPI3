@@ -21,7 +21,13 @@ namespace Margille.Controllers
         // GET: Ingredients
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Ingredient.ToListAsync());
+            //return View(await _context.Ingredient.ToListAsync());
+            return View(FindAll());
+        }
+
+        public List<Ingredient> FindAll()
+        {
+            return _context.Ingredient.ToList();
         }
 
         // GET: Ingredients/Details/5

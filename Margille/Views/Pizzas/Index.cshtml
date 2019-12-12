@@ -21,6 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.ProductPrice)
             </th>
+            <th>
+                Ingredients
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -35,6 +38,14 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                @{
+                    foreach (var ing in item.PizzaIngredients)
+                    {
+                        <span>@Html.DisplayFor(model => ing.Ingredient.IngredientName)</span>
+                    }
+                }
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |

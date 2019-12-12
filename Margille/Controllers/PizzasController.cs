@@ -21,7 +21,58 @@ namespace Margille.Controllers
         // GET: Pizzas
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Pizza.ToListAsync());
+            //return View(await _context.Pizza.ToListAsync());
+            return View(FindAll());
+        }
+
+        public List<Pizza> FindAll()
+        {
+            var pizzas = new List<Pizza>();
+            //pizzas = _context.Pizza.ToList();
+
+            // Incluindo os ingredientes no objeto
+            pizzas = _context.Pizza
+                    .Include(pi => pi.PizzaIngredients)
+                        .ThenInclude(pi => pi.Ingredient)
+                    .AsNoTracking()
+                    .ToList();
+
+            /* viewModel.Instructors = await _context.Instructors
+              .Include(i => i.OfficeAssignment)
+              .Include(i => i.CourseAssignments)
+                .ThenInclude(i => i.Course)
+                    .ThenInclude(i => i.Enrollments)
+                        .ThenInclude(i => i.Student)
+              .Include(i => i.CourseAssignments)
+                .ThenInclude(i => i.Course)
+                    .ThenInclude(i => i.Department)
+              .AsNoTracking()
+              .OrderBy(i => i.LastName)
+              .ToListAsync();
+            */
+
+            // Incluindo os ingredientes no objeto
+            /*foreach (Pizza pizza in pizzas)
+            {
+                pizza.PizzaIngredients = _context.PizzaIngredient
+                    .Include(i => i.Ingredient)
+                    .Include(p => p.Pizza)
+                    .Where(p => p.PizzaId == pizza.ProductId)
+                    .ToList();
+            }*/
+
+            return pizzas;
+        }
+
+        public Pizza FindPizza(int? id)
+        {
+            var pizza = _context.Pizza
+                .Include(pi => pi.PizzaIngredients)
+                    .ThenInclude(pi => pi.Ingredient)
+                .AsNoTracking()
+                .FirstOrDefault(m => m.ProductId == id);
+
+            return pizza;
         }
 
         // GET: Pizzas/Details/5
@@ -32,8 +83,10 @@ namespace Margille.Controllers
                 return NotFound();
             }
 
-            var pizza = await _context.Pizza
-                .FirstOrDefaultAsync(m => m.ProductId == id);
+            /*var pizza = await _context.Pizza
+                .FirstOrDefaultAsync(m => m.ProductId == id);*/
+            var pizza = FindPizza(id);
+
             if (pizza == null)
             {
                 return NotFound();
@@ -72,7 +125,10 @@ namespace Margille.Controllers
                 return NotFound();
             }
 
-            var pizza = await _context.Pizza.FindAsync(id);
+            //var pizza = await _context.Pizza.FindAsync(id);
+
+            var pizza = FindPizza(id);
+
             if (pizza == null)
             {
                 return NotFound();
@@ -123,8 +179,11 @@ namespace Margille.Controllers
                 return NotFound();
             }
 
-            var pizza = await _context.Pizza
-                .FirstOrDefaultAsync(m => m.ProductId == id);
+            /*var pizza = await _context.Pizza
+                .FirstOrDefaultAsync(m => m.ProductId == id);*/
+
+            var pizza = FindPizza(id);
+
             if (pizza == null)
             {
                 return NotFound();

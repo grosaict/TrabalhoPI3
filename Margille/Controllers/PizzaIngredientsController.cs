@@ -21,9 +21,28 @@ namespace Margille.Controllers
         // GET: PizzaIngredients
         public async Task<IActionResult> Index()
         {
-            var margilleContext = _context.PizzaIngredient.Include(p => p.Ingredient).Include(p => p.Pizza);
-            return View(await margilleContext.ToListAsync());
+            //var margilleContext = _context.PizzaIngredient.Include(p => p.Ingredient).Include(p => p.Pizza);
+            //return View(await margilleContext.ToListAsync());
+            return View(FindAll());
         }
+
+        public List<PizzaIngredient> FindAll()
+        {
+            var margilleContext = _context.PizzaIngredient.Include(p => p.Ingredient).Include(p => p.Pizza);
+            return margilleContext.ToList();
+        }
+
+        // Retorna ingredientes de uma pizza
+        public List<PizzaIngredient> FindPizzaIngredients(int id)
+        {
+            var pizzaIngredient = _context.PizzaIngredient
+                .Include(p => p.Ingredient)
+                .Include(p => p.Pizza)
+                .Where(m => m.PizzaId == id);
+
+            return pizzaIngredient.ToList();
+        }
+
 
         // GET: PizzaIngredients/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -48,8 +67,8 @@ namespace Margille.Controllers
         // GET: PizzaIngredients/Create
         public IActionResult Create()
         {
-            ViewData["IngredientId"] = new SelectList(_context.Ingredient, "IngredientId", "IngredientId");
-            ViewData["PizzaId"] = new SelectList(_context.Pizza, "ProductId", "Discriminator");
+            ViewData["Ingredient"] = new SelectList(_context.Ingredient, "IngredientId", "IngredientName");
+            ViewData["Pizza"] = new SelectList(_context.Pizza, "ProductId", "PizzaDescription");
             return View();
         }
 
@@ -67,7 +86,8 @@ namespace Margille.Controllers
                 return RedirectToAction(nameof(Index));
             }
             ViewData["IngredientId"] = new SelectList(_context.Ingredient, "IngredientId", "IngredientId", pizzaIngredient.IngredientId);
-            ViewData["PizzaId"] = new SelectList(_context.Pizza, "ProductId", "Discriminator", pizzaIngredient.PizzaId);
+            ViewData["PizzaId"] = new SelectList(_context.Pizza, "ProductId", "PizzaDescription", pizzaIngredient.PizzaId);
+
             return View(pizzaIngredient);
         }
 

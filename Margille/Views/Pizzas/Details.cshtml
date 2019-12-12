@@ -4,7 +4,7 @@
     ViewData["Title"] = "Details";
 }
 
-<h2>Details</h2>
+<h2>@ViewData["Title"]</h2>
 
 <div>
     <h4>Pizza</h4>
@@ -27,6 +27,17 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.ProductPrice)
+        </dd>
+        <dt>
+            Ingredients
+        </dt>
+        <dd>
+            @{ 
+                foreach (var item in Model.PizzaIngredients)
+                {
+                    <span>@Html.DisplayFor(model => item.Ingredient.IngredientName)</span>
+                }
+            }
         </dd>
     </dl>
 </div>
